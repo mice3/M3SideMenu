@@ -18,7 +18,7 @@ Each of the three segments can be disabled/hidden, which will make the others ad
 ```Objective-c
 M3SideMenu *menu = [[M3SideMenu alloc] initWithDelegate:self]; 
 // this sets the tableView datasource delegate to your view as well,
-// so the basic tableView datasource methods need to be
+// so the basic tableView datasource methods need to be implemented
      [self.view addSubview:self.menu]; 
 // optional
      self.menu.isTableViewExtandingEnabled = YES; // makes the tableView extendable 
