@@ -27,4 +27,5 @@ M3SideMenu *menu = [[M3SideMenu alloc] initWithDelegate:self];
 - in "M3SideMenu.h" set the cell/header heights and the desired padding 
 - build & run! 
 
-- demo: [M3SideMenu Demo](https://www.youtube.com/watch?v=aGZSNC-Z4Ks)
+# Demo 
+[M3SideMenu Demo](https://www.youtube.com/watch?v=aGZSNC-Z4Ks)
