@@ -12,8 +12,8 @@ Each of the three segments can be disabled/hidden, which will make the others ad
  
  
 # Installation 
-- in your desired ViewController the required header 
-#import "M3SideMenu.h" 
+- Download the source and include it in your project (or add it as a git sub-module)
+- in your desired ViewController import the "M3SideMenu.h" header 
 - create the side menu: 
 ```Objective-c
 M3SideMenu *menu = [[M3SideMenu alloc] initWithDelegate:self]; 
