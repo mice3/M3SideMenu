@@ -11,7 +11,11 @@
 @protocol M3SideMenuDelegate <NSObject>
 
 - (void)buttonClickHandler:(UIButton *)button;
-
+@optional
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 // Configuration
@@ -35,5 +39,8 @@
 - (id)initWithDelegate:(id)delegate;
 
 - (void)configureBottom:(UIView *)aView;
+
+- (void)removeCellAt:(NSIndexPath *)indexPath;
+- (void)insertCellAt:(NSIndexPath *)indexPath;
 
 @end

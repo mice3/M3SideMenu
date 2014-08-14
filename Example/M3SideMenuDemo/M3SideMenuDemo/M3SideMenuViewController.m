@@ -86,18 +86,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     M3SideMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-    
     NSString *description = @"Add new cell";
     UIColor *color = [UIColor greenColor];
 
-    if (![indexPath isEqual:[NSIndexPath indexPathForItem:0 inSection:0]]) {
-        cell.accessoryView = nil;
-    } else {
-        [self.menu.expandButton removeFromSuperview];
-        cell.accessoryView = self.menu.expandButton;
-    }
-    
-    
     if (indexPath.row != [self.tableObjects count]) {
         NSDictionary *dict = [self.tableObjects objectAtIndex:indexPath.row];
         description = [NSString stringWithFormat:@"Cell %@", [dict objectForKey:@"name"]];
@@ -111,38 +102,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0
-        || indexPath.row != [self.tableObjects count]) {
-        M3SideMenuCell *cell = (M3SideMenuCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:indexPath.section]];
-        cell.accessoryView = nil;
-    }
     if (indexPath.row == [self.tableObjects count]) {
         long num = [[[self.tableObjects lastObject] objectForKey:@"name"] intValue];
-        
-        [tableView beginUpdates];
         [self.tableObjects addObject:@{@"name":[NSNumber numberWithLong:num+1]}];
-        [tableView insertRowsAtIndexPaths:@[indexPath]
-                         withRowAnimation:UITableViewRowAnimationLeft];
-        [tableView endUpdates];
-        
-        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     } else {
-        [tableView beginUpdates];
         [self.tableObjects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath]
-                         withRowAnimation:UITableViewRowAnimationLeft];
-        [tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section]
-                 withRowAnimation:UITableViewRowAnimationNone];
-        [tableView endUpdates];
     }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kM3CellHeight;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return kM3HeaderHeight;
 }
 
 /*

@@ -8,7 +8,7 @@
 
 #import "M3SideMenu.h"
 
-@interface M3SideMenu() <UIGestureRecognizerDelegate>
+@interface M3SideMenu() <UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 
 @property (strong, nonatomic) NSMutableArray *buttonArray;
@@ -25,13 +25,9 @@
 
 - (id)initWithDelegate:(id)delegate {
     self = [[[NSBundle mainBundle] loadNibNamed:@"M3SideMenu" owner:self options:nil] objectAtIndex:0];
-    self.tableView.delegate     = delegate;
-    self.tableView.dataSource   = delegate;
     self.delegate = delegate;
     
     self.buttonCount = 2;
-    
-    
     
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
     panRecognizer.delegate = self;
@@ -186,9 +182,7 @@
 
 #pragma mark - Touch management
 - (void)panView:(UIPanGestureRecognizer *)recognizer {
-
     CGPoint currentPoint = [recognizer translationInView:self.superview];
-//    NSLog(@"%.1f, %.1f", currentPoint.x, currentPoint.y);
     
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan:
@@ -215,6 +209,65 @@
         default:
             break;
     }
+}
+#pragma mark - UITableView data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return [self.delegate numberOfSectionsInTableView:tableView];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+    return [self.delegate tableView:tableView numberOfRowsInSection:section];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.delegate tableView:tableView cellForRowAtIndexPath:indexPath];
+    if ([indexPath isEqual:[NSIndexPath indexPathForItem:0 inSection:0]]) {
+        [self.expandButton removeFromSuperview];
+        cell.accessoryView = self.expandButton;
+    } else {
+        cell.accessoryView = nil;
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+    long cellCount = [tableView numberOfRowsInSection:indexPath.section];
+    if (indexPath.row == 0) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:indexPath.section]];
+        cell.accessoryView = nil;
+    }
+    [tableView beginUpdates];
+    if (indexPath.row + 1 == cellCount) {
+        [tableView insertRowsAtIndexPaths:@[indexPath]
+                         withRowAnimation:UITableViewRowAnimationLeft];
+        [tableView endUpdates];
+        
+        [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:indexPath.row + 1 inSection:indexPath.section]
+                         atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    } else {
+        NSLog(@"%li", cellCount);
+        [tableView deleteRowsAtIndexPaths:@[indexPath]
+                         withRowAnimation:UITableViewRowAnimationLeft];
+        [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:indexPath.row+1 inSection:indexPath.section]]
+                         withRowAnimation:UITableViewRowAnimationNone];
+        
+        [tableView endUpdates];
+    }
+}
+
+
+#pragma mark - UITableView delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return kM3CellHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return kM3HeaderHeight;
 }
 
 @end
