@@ -58,7 +58,8 @@
     }
     self.menu.buttonCount += val;
     
-    UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"User"]];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    view.backgroundColor = [UIColor cyanColor];
     CGRect frame = view.frame;
     double factor = (arc4random() % 300) / 100;
     frame.size = CGSizeMake(frame.size.width * factor, frame.size.height * factor);
