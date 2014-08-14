@@ -1,5 +1,6 @@
 M3SideMenu
 ==========
+# Overview 
 a little Objective C side navigation view, that we created for a certain project.
 The view is separated into 3 segments: 
 - top: extendable table view with add/remove cell functionalities 
@@ -10,7 +11,7 @@ Each of the three segments can be disabled/hidden, which will make the others ad
 
  
  
-Installation: 
+# Installation 
 - in your desired ViewController the required header 
 #import "M3SideMenu.h" 
 - create the side menu: 
