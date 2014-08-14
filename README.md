@@ -16,8 +16,8 @@ Installation:
 - create the side menu: 
 ```Objective-c
 M3SideMenu *menu = [[M3SideMenu alloc] initWithDelegate:self]; 
- // this sets the tableView datasource delegate to your view as well, so the basic tableView datasource methods need to be
- implemented as well 
+// this sets the tableView datasource delegate to your view as well,
+// so the basic tableView datasource methods need to be
      [self.view addSubview:self.menu]; 
 // optional
      self.menu.isTableViewExtandingEnabled = YES; // makes the tableView extendable 
