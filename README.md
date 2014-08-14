@@ -14,12 +14,16 @@ Installation:
 - in your desired ViewController the required header 
 #import "M3SideMenu.h" 
 - create the side menu: 
+```Objective-c
 M3SideMenu *menu = [[M3SideMenu alloc] initWithDelegate:self]; 
-// this sets the tableView datasource delegate to your view as well, so the basic tableView datasource methods need to be
-implemented as well 
-    [self.view addSubview:self.menu]; 
-#optional 
-    self.menu.isTableViewExtandingEnabled = YES; // makes the tableView extendable 
-    [self.menu configureBottom:view]; // add the desired bottom view 
+ // this sets the tableView datasource delegate to your view as well, so the basic tableView datasource methods need to be
+ implemented as well 
+     [self.view addSubview:self.menu]; 
+// optional
+     self.menu.isTableViewExtandingEnabled = YES; // makes the tableView extendable 
+     [self.menu configureBottom:view]; // add the desired bottom view 
+```
 - in "M3SideMenu.h" set the cell/header heights and the desired padding 
-- build & run!
+- build & run! 
+
+- demo: [M3SideMenu Demo](https://www.youtube.com/watch?v=aGZSNC-Z4Ks)
