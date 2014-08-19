@@ -1,5 +1,7 @@
 # M3SideMenu
-[[Version](https://img.shields.io/cocoapods/v/M3SideMenu.svg?style=flat)](http://cocoadocs.org/docsets/M3SideMenu)[[License](https://img.shields.io/cocoapods/l/M3SideMenu.svg?style=flat)](http://cocoadocs.org/docsets/M3SideMenu)[[Platform](https://img.shields.io/cocoapods/p/M3SideMenu.svg?style=flat)](http://cocoadocs.org/docsets/M3SideMenu)
+[![Version](https://img.shields.io/cocoapods/v/M3SideMenu.svg?style=flat)](http://cocoadocs.org/docsets/M3SideMenu)
+[![License](https://img.shields.io/cocoapods/l/M3SideMenu.svg?style=flat)](http://cocoadocs.org/docsets/M3SideMenu)
+[![Platform](https://img.shields.io/cocoapods/p/M3SideMenu.svg?style=flat)](http://cocoadocs.org/docsets/M3SideMenu)
 ==========
 # Overview 
 a little Objective C side navigation view, that we created for a certain project.
