@@ -248,7 +248,7 @@
                          withRowAnimation:UITableViewRowAnimationLeft];
         [tableView endUpdates];
         
-        [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:indexPath.row + 1 inSection:indexPath.section]
+        [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:indexPath.row inSection:indexPath.section]
                          atScrollPosition:UITableViewScrollPositionTop animated:YES];
     } else {
         NSLog(@"%li", cellCount);
