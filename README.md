@@ -1,6 +1,4 @@
 # M3SideMenu
-
-[![CI Status](http://img.shields.io/travis/rok črešnik/M3SideMenu.svg?style=flat)](https://travis-ci.org/rok črešnik/M3SideMenu)
 [![Version](https://img.shields.io/cocoapods/v/M3SideMenu.svg?style=flat)](http://cocoadocs.org/docsets/M3SideMenu)
 [![License](https://img.shields.io/cocoapods/l/M3SideMenu.svg?style=flat)](http://cocoadocs.org/docsets/M3SideMenu)
 [![Platform](https://img.shields.io/cocoapods/p/M3SideMenu.svg?style=flat)](http://cocoadocs.org/docsets/M3SideMenu)

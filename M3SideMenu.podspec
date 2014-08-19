@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
   s.name             = "M3SideMenu"
   s.version          = "0.1.0"
-  s.summary          = "light weight side menu, that offers navigation and other useful info"
+  s.summary          = "light weight side menu, that offers navigation and other useful containers"
   s.description      = <<-DESC
 a little Objective C side navigation view, that we created for a certain project.
 The view is separated into 3 segments: 
@@ -21,8 +21,6 @@ The view is separated into 3 segments:
 Each of the three segments can be disabled/hidden, which will make the others adjust their sizes accordingly
                        DESC
   s.homepage         = "https://github.com/mice3/M3SideMenu"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  # s.screenshots	     = "https://www.youtube.com/watch?v=aGZSNC-Z4Ks"
   s.license          = 'MIT'
   s.author           = { "rok črešnik" => "rok@mice3.it" }
   s.source           = { :git => "https://github.com/mice3/M3SideMenu.git", :tag => s.version.to_s }
