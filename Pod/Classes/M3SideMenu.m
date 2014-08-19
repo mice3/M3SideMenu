@@ -54,7 +54,7 @@
         button.tag = prevButton ? prevButton.tag + 1 : 1;
         button.frame = prevButton.frame;
         
-        NSString *title = [NSString stringWithFormat:@"Delete button %li", button.tag];
+        NSString *title = [NSString stringWithFormat:@"Delete button %li", (long)button.tag];
         UIColor *background = [UIColor redColor];
         if (button.tag == 1) {
             background = [UIColor greenColor];
