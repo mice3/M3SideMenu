@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0DE6D042-C905-483A-ABF5-17AD62D2CAC0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>M3SideMenu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>032674BE9B2BCECF96691269A0DA59C10E497FFD</key>
+		<string>https://github.com/mice3/M3SideMenu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Example/M3SideMenu.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>032674BE9B2BCECF96691269A0DA59C10E497FFD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mice3/M3SideMenu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>032674BE9B2BCECF96691269A0DA59C10E497FFD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>032674BE9B2BCECF96691269A0DA59C10E497FFD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>M3SideMenu</string>
+		</dict>
+	</array>
+</dict>
+</plist>
